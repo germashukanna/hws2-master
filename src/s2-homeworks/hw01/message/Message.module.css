@@ -1,26 +1,28 @@
 .message {
     display: flex;
-    max-width: 1280px;
-
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 25px;
 }
 
 .imageAndText {
     display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    gap: 10px;
     position: relative;
-    margin-left: 105px;
+    z-index: 3;
 }
 
 .imageAndText img {
-    position: absolute;
+    z-index: 3;
     width: 48px;
     height: 48px;
-    margin-left: 1102px;
-
 }
 
 .text {
     font-family: 'Montserrat', sans-serif;
-    position: absolute;
+    position: relative;
     margin-left: 565px;
     background-color: #0066CC;
     width: 527px;
@@ -34,29 +36,30 @@
 .text:after {
     content: "";
     position: absolute;
-
-    right: -10px; bottom: 0px;
+    right: -10px;
+    bottom: 0;
     border: 10px solid transparent;
     border-bottom: 10px solid #0066CC;
 }
 
 .name {
-    position: absolute;
-    left: 462px;
-    font-weight: bold;
-    size: 16px;
+    text-align: end;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 18px;
+    letter-spacing: 2px;
 }
 
+
 .messageText {
-    position: absolute;
-    top: 32px;
-    font-weight: normal;
-    size: 16px;
-   }
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
 
 .time {
-    position: absolute;
-    left: 1280px;
-    top: 225px;
-    font-weight: bold;
+    padding-right: 10px;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 22px;
 }

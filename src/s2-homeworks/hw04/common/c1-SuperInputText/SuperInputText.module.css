@@ -24,6 +24,7 @@
 
 .errorInput {
     display: flex;
+    flex-direction: row;
     border: 1px solid #CC1439;
     color: #CC1439;
 }
