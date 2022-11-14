@@ -10,12 +10,8 @@ type PropsType = {
 }
 
 export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
-
-    const openClass = open ? ' ' + s.open : ''
-    const sidebarClass = `${s.sidebar} ${openClass}` // navlink class
-
-    const navClass = open ? s.nav : s.navHidden //nav class
-
+    const sidebarClass = s.sidebar
+        + (open ? ' ' + s.open : '')
     return (
         <>
             {/*затемнение справа от открытого меню*/}
@@ -30,12 +26,12 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                     />
                 </button>
 
-                <nav id={'hw5-menu'} className={navClass}>
+                <nav id={'hw5-menu'} className={s.nav}>
                     <NavLink
                         id={'hw5-pre-junior-link'}
                         to={PATH.PRE_JUNIOR}
                         onClick={handleClose}
-                        className={({isActive}) => isActive ? s.active : ''}
+                        className={({isActive}) => isActive ? s.active : s.nav}
                     >
                         Pre-junior
                     </NavLink>
@@ -43,7 +39,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-junior-link'}
                         to={PATH.JUNIOR}
                         onClick={handleClose}
-                        className={({isActive}) => isActive ? s.active : ''}
+                        className={({isActive}) => isActive ? s.active : s.nav}
                     >
                         Junior
                     </NavLink>
@@ -51,7 +47,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
                         id={'hw5-junior-plus-link'}
                         to={PATH.JUNIOR_PLUS}
                         onClick={handleClose}
-                        className={({isActive}) => isActive ? s.active : ''}
+                        className={({isActive}) => isActive ? s.active : s.nav}
                     >
                         Junior Plus
                     </NavLink>
