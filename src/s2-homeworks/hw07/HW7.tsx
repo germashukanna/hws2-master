@@ -11,6 +11,11 @@ import s from './HW7.module.css'
 * 4 - сделать стили в соответствии с дизайном
 * */
 
+export type OptionsTape = {
+    id: number
+    value: string
+}
+
 const arr = [
     {id: 1, value: 'Pre-junior'},
     {id: 2, value: 'Junior'},
