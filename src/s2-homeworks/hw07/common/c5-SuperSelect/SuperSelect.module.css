@@ -1,13 +1,25 @@
 .select {
+    position: relative;
     width: 165px;
     height: 24px;
     border-radius: 2px;
     border: 1px solid #C2C2C2;
+    padding: 0 10px;
+    color: #A9A9A9;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
 }
 
 .select:focus {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    padding: 0 10px;
 }
 
 
 .option:hover {
+
 }
+
+

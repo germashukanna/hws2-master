@@ -1,15 +1,22 @@
 .radio {
+    display: flex;
+
 }
 
 .radio::before {
+
 }
 
 
 .radio:checked::before {
+    background-color: black;
 }
 
 .label {
+    display: flex;
+    padding: 7px;
 }
 
 .options {
+    margin-left: 70px;
 }
