@@ -24,8 +24,8 @@
 
 .buttonsContainer {
     display: flex;
-    justify-content: space-between;
-    width: 500px;
+    justify-content: space-evenly;
+    min-width: 200px;
     margin-left: 500px;
 
 }
