@@ -1,14 +1,10 @@
 .container {
+    boxShadow: none;
 }
 
 .wrapper {
-    width: 190px;
     display: flex;
     margin: 42px 0;
-}
-
-.wrapper:nth-child(2) {
-    width: 238px;
 }
 
 .number {
