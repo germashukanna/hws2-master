@@ -1,19 +1,33 @@
 .buttonsContainer {
+
 }
 
 .responseContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.HW13SuperButton{
+margin: 0 10px;
 }
 
 .imageContainer {
 }
 
 .image {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .textContainer{
+    margin-top: 100px;
 }
 
 .code {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
 .text {

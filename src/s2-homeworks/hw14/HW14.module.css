@@ -1,0 +1,22 @@
+.tech {
+    font-size: 16px;
+
+}
+.tech:nth-last-child(1) {
+    margin-bottom: 40px;
+
+}
+
+.loading {
+    font-size: 16px;
+    opacity: 50%;
+    text-align: end;
+}
+
+.techContainer {
+    max-width: 370px;
+}
+
+.SuperDebouncedInputHW14 {
+    width: 468px;
+}

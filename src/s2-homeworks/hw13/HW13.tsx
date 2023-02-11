@@ -76,7 +76,7 @@ const HW13 = () => {
             <hr/>
             <div className={s2.hw}>
                 <div className={s.buttonsContainer}>
-                    <SuperButton
+                    <SuperButton className={s.HW13SuperButton}
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
@@ -85,7 +85,7 @@ const HW13 = () => {
                     >
                         Send true
                     </SuperButton>
-                    <SuperButton
+                    <SuperButton className={s.HW13SuperButton}
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
@@ -94,7 +94,7 @@ const HW13 = () => {
                     >
                         Send false
                     </SuperButton>
-                    <SuperButton
+                    <SuperButton className={s.HW13SuperButton}
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
@@ -103,7 +103,7 @@ const HW13 = () => {
                     >
                         Send undefined
                     </SuperButton>
-                    <SuperButton
+                    <SuperButton className={s.HW13SuperButton}
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
