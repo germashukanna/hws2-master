@@ -75,20 +75,22 @@ const HW14 = () => {
         <div id={'hw14'}>
             <div className={s2.hwTitle}>Homework #14</div>
             <hr/>
-            <div className={s2.hw} >
-                <div  className={s.techContainer}>
-                <SuperDebouncedInput className={s.SuperDebouncedInputHW14}
-                    id={'hw14-super-debounced-input'}
-                    value={find}
-                    onChangeText={onChangeText}
-                    onDebouncedChange={sendQuery}
-                />
-
-                    <div id={'hw14-loading'} className={s.loading}>
-                        {isLoading ? '...ищем' : <br/>}
-                    </div>
-                {mappedTechs}
-            </div>
+            <div className={s2.hw}>
+                <div className={s.techContainer}>
+                    <SuperDebouncedInput className={s.SuperDebouncedInputHW14}
+                                         id={'hw14-super-debounced-input'}
+                                         value={find}
+                                         onChangeText={onChangeText}
+                                         onDebouncedChange={sendQuery}
+                    />
+                    {isLoading === true ?
+                        (<div id={'hw14-loading'} className={s.loading}>
+                            '...ищем'
+                        </div>)
+                        :
+                        <br/>}
+                    {mappedTechs}
+                </div>
             </div>
         </div>
     )

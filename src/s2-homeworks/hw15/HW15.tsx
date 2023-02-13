@@ -21,13 +21,7 @@ type TechType = {
     developer: string
 }
 
-type ParamsType = {
-    sort: string
-    page: number
-    count: number
-}
-
-const getTechs = (params: ParamsType) => {
+const getTechs = (params: any) => {
     return axios
         .get<{ techs: TechType[], totalCount: number }>(
             'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test3',
@@ -52,9 +46,13 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-
                 // сохранить пришедшие данные
-
+                if (res) {
+                    setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
+                    setLoading(true)
+                }
+                setLoading(false)
                 //
             })
     }
@@ -64,10 +62,16 @@ const HW15 = () => {
 
         // setPage(
         // setCount(
-
+        setPage(newPage)
+        setCount(newCount)
         // sendQuery(
         // setSearchParams(
 
+        setSearchParams({
+            ...Object.fromEntries(searchParams),
+            page: newPage.toString(),
+            count: newCount.toString(),
+        })
         //
     }
 
@@ -76,36 +80,27 @@ const HW15 = () => {
 
         // setSort(
         // setPage(1) // при сортировке сбрасывать на 1 страницу
-
+        setSort(newSort)
         // sendQuery(
         // setSearchParams(
-
+        setSearchParams({
+            ...Object.fromEntries(searchParams),
+            sort: newSort
+        })
         //
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({page: params.page, count: params.count})
+        sendQuery({page: params.page, count: params.count, sort: params.sort})
         setPage(+params.page || 1)
         setCount(+params.count || 4)
-    }, [])
-
-    const mappedTechs = techs.map(t => (
-        <div key={t.id} className={s.row}>
-            <div id={'hw15-tech-' + t.id} className={s.tech}>
-                {t.tech}
-            </div>
-
-            <div id={'hw15-developer-' + t.id} className={s.developer}>
-                {t.developer}
-            </div>
-        </div>
-    ))
+    }, [searchParams])
 
     return (
         <div id={'hw15'}>
             <div className={s2.hwTitle}>Homework #15</div>
-
+            <hr/>
             <div className={s2.hw}>
                 {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
 
@@ -127,8 +122,20 @@ const HW15 = () => {
                         <SuperSort sort={sort} value={'developer'} onChange={onChangeSort}/>
                     </div>
                 </div>
-
-                {mappedTechs}
+                <div className={s.rowTech}>
+                    {techs.map(t => (
+                        <div key={t.id} className={s.row}>
+                            <div id={'hw15-tech-' + t.id} className={s.tech}>
+                                {t.tech}
+                            </div>
+                            <hr/>
+                            <div id={'hw15-developer-' + t.id} className={s.developer}>
+                                {t.developer}
+                            </div>
+                        </div>
+                    ))}
+                    <hr/>
+                </div>
             </div>
         </div>
     )
